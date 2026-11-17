@@ -1,0 +1,43 @@
+{
+    "version": "0.69.2",
+    "description": "Local coding agent for LM Studio and other OpenAI-compatible servers.",
+    "homepage": "https://github.com/ipsupport-llc/ipsupport-code",
+    "license": "MIT",
+    "notes": [
+        "Its settings in your user profile stay when Scoop updates or removes it.",
+        "Update with 'scoop update ipsupport-code', not 'ipsupport-code update', so Scoop keeps track of the version."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ipsupport-llc/ipsupport-code/releases/download/v0.69.2/ipsupport-code_v0.69.2_windows-amd64.zip",
+            "hash": "c071764d050b8036b137cb625e8192a8b0e66cdb254b25ca1f5b2f4647a269d8"
+        },
+        "arm64": {
+            "url": "https://github.com/ipsupport-llc/ipsupport-code/releases/download/v0.69.2/ipsupport-code_v0.69.2_windows-arm64.zip",
+            "hash": "70522ab09c6825f3504033591c9530efc2043ab37f3acf93296b3d271b8fa664"
+        }
+    },
+    "bin": [
+        "ipsupport-code.exe",
+        [
+            "ipsupport-code.exe",
+            "ipco"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/ipsupport-llc/ipsupport-code"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ipsupport-llc/ipsupport-code/releases/download/v$version/ipsupport-code_v$version_windows-amd64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/ipsupport-llc/ipsupport-code/releases/download/v$version/ipsupport-code_v$version_windows-arm64.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.txt"
+        }
+    }
+}
