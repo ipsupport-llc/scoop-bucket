@@ -5,8 +5,7 @@
     "license": "Apache-2.0",
     "notes": [
         "Settings and logs are in %LOCALAPPDATA%\\LLMTray, models in %USERPROFILE%\\.llmtray\\models; Scoop leaves both alone.",
-        "Update with 'scoop update llmtray' (quit LLMTray first), not the app's own updater, so Scoop keeps track of the version.",
-        "Betas are unsigned: if SmartScreen stops LLMTray, choose More info, then Run anyway."
+        "Update with 'scoop update llmtray' (quit LLMTray first), not the app's own updater, so Scoop keeps track of the version."
     ],
     "architecture": {
         "64bit": {
