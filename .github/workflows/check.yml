@@ -1,0 +1,36 @@
+name: check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Scoop and this bucket
+        shell: pwsh
+        run: |
+          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+          Invoke-RestMethod https://get.scoop.sh -OutFile install.ps1
+          ./install.ps1 -RunAsAdmin
+          "$env:USERPROFILE\scoop\shims" | Out-File -Append $env:GITHUB_PATH
+          & "$env:USERPROFILE\scoop\shims\scoop.cmd" bucket add ipsupport "$env:GITHUB_WORKSPACE"
+      - name: ipsupport-code installs and runs, under both names
+        shell: pwsh
+        run: |
+          scoop install ipsupport/ipsupport-code
+          if ($LASTEXITCODE -ne 0) { throw 'install failed' }
+          ipsupport-code -version
+          if ($LASTEXITCODE -ne 0) { throw 'ipsupport-code failed' }
+          ipco -version
+          if ($LASTEXITCODE -ne 0) { throw 'ipco failed' }
+      - name: checkver finds every manifest's release
+        shell: pwsh
+        run: |
+          $checkver = "$env:USERPROFILE\scoop\apps\scoop\current\bin\checkver.ps1"
+          & $checkver -Dir "$env:GITHUB_WORKSPACE\bucket" -App '*'
