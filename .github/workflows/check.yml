@@ -12,18 +12,18 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Scoop and this bucket
+      - name: Install Scoop
         shell: pwsh
         run: |
           Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
           Invoke-RestMethod https://get.scoop.sh -OutFile install.ps1
           ./install.ps1 -RunAsAdmin
           "$env:USERPROFILE\scoop\shims" | Out-File -Append $env:GITHUB_PATH
-          & "$env:USERPROFILE\scoop\shims\scoop.cmd" bucket add ipsupport "$env:GITHUB_WORKSPACE"
       - name: ipsupport-code installs and runs, under both names
         shell: pwsh
         run: |
-          scoop install ipsupport/ipsupport-code
+          # The manifest from this checkout, as the bucket would serve it.
+          scoop install "$env:GITHUB_WORKSPACE\bucket\ipsupport-code.json"
           if ($LASTEXITCODE -ne 0) { throw 'install failed' }
           ipsupport-code -version
           if ($LASTEXITCODE -ne 0) { throw 'ipsupport-code failed' }
