@@ -1,5 +1,5 @@
 {
-    "version": "0.1.7",
+    "version": "0.1.8-beta.1",
     "description": "Local AI runtime: runs GGUF models with llama.cpp and serves an OpenAI-compatible API at http://localhost:8765/v1, from the notification area.",
     "homepage": "https://github.com/ipsupport-llc/llmtray-windows",
     "license": "Apache-2.0",
@@ -9,12 +9,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ipsupport-llc/llmtray-windows/releases/download/v0.1.7/LLMTray-0.1.7-x64-portable.zip",
-            "hash": "87ef3649300eee61f9ad99daaa3215ce56c748668b64538fd89aa295dbb41d4e"
+            "url": "https://github.com/ipsupport-llc/llmtray-windows/releases/download/v0.1.8-beta.1/LLMTray-0.1.8-beta.1-x64-portable.zip",
+            "hash": "96fba6c2b85c33e428c8f3cc50f812b2804e4eac0a0098f084285a1cd71db20f"
         },
         "arm64": {
-            "url": "https://github.com/ipsupport-llc/llmtray-windows/releases/download/v0.1.7/LLMTray-0.1.7-ARM64-portable.zip",
-            "hash": "85494d615b0e1aab297e3be926d846e366e270991d672c55429903ca7a02d759"
+            "url": "https://github.com/ipsupport-llc/llmtray-windows/releases/download/v0.1.8-beta.1/LLMTray-0.1.8-beta.1-ARM64-portable.zip",
+            "hash": "8dfaf97ec1cdc87c484dcf0b19b4fa481c178f11f1b014c38214eb684ac0c1a5"
         }
     },
     "extract_dir": "LLMTray",
