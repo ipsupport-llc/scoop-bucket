@@ -1,5 +1,5 @@
 {
-    "version": "0.70.0",
+    "version": "0.70.1",
     "description": "Local coding agent for LM Studio and other OpenAI-compatible servers.",
     "homepage": "https://github.com/ipsupport-llc/ipsupport-code",
     "license": "MIT",
@@ -9,12 +9,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ipsupport-llc/ipsupport-code/releases/download/v0.70.0/ipsupport-code_v0.70.0_windows-amd64.zip",
-            "hash": "fca6f04c5b446d7ba1c05159abf94e9a5bf41e445e3f46e7de91f52e872668dd"
+            "url": "https://github.com/ipsupport-llc/ipsupport-code/releases/download/v0.70.1/ipsupport-code_v0.70.1_windows-amd64.zip",
+            "hash": "4bfcc2b49079c73b96d3621eacf974bf4c97534e43fb13331645b765ea8c3eae"
         },
         "arm64": {
-            "url": "https://github.com/ipsupport-llc/ipsupport-code/releases/download/v0.70.0/ipsupport-code_v0.70.0_windows-arm64.zip",
-            "hash": "b31e79fe9c718ca4b24378fc4374b34f42902246e1f00206ab9902a665e9736c"
+            "url": "https://github.com/ipsupport-llc/ipsupport-code/releases/download/v0.70.1/ipsupport-code_v0.70.1_windows-arm64.zip",
+            "hash": "258c9d8d30d7efc542780c8322589274cd8047a4aa2f0474a028345200cab9a7"
         }
     },
     "bin": [
